@@ -1,11 +1,11 @@
 import React from 'react';
 
-const SocialLogin = () => {
+const NotFound = () => {
     return (
         <div>
-
+            <h2>Not found</h2>
         </div>
     );
 };
 
-export default SocialLogin;
+export default NotFound;

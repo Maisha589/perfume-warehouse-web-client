@@ -7,7 +7,8 @@ import Register from './Layouts/Login/Register/Register';
 import PerfumeInventory from './Layouts/PerfumeInventory/PerfumeInventory';
 import Footer from './Layouts/Shared/Footer/Footer';
 import Header from './Layouts/Shared/Header/Header';
-// import "@material-tailwind/react/tailwind.css";
+import NotFound from './Layouts/Shared/NotFound/NotFound';
+import StockUpdate from './Layouts/StockUpdate/StockUpdate';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path='/perfumeInventory' element={<PerfumeInventory></PerfumeInventory>}></Route>
         <Route path='/login' element={<Login></Login>}>Login</Route>
         <Route path='/registration' element={<Register></Register>}></Route>
+        <Route path='stockUpdate' element={<StockUpdate></StockUpdate>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

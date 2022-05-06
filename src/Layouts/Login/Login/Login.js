@@ -1,19 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/solid';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import auth from '../../../firebase.init';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if (error) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+            </div>
+        );
+    }
+    if (loading) {
+        return (
+            <Loading></Loading>
+        )
+    }
+    if (user) {
+        // navigate("/");
+    }
+
     return (
         <>
-            {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
             <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-md w-full space-y-8">
                     <div>
@@ -24,7 +46,9 @@ const Login = () => {
                         />
                         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Log in to your account</h2>
                     </div>
-                    <form className="mt-8 space-y-6" action="#" method="POST">
+                    <form
+                        onClick={() => signInWithEmailAndPassword(email, password)}
+                        className="mt-8 space-y-6" action="#" method="POST">
                         <input type="hidden" name="remember" defaultValue="true" />
                         <div className="rounded-md shadow-sm -space-y-px">
                             <div>
@@ -32,6 +56,7 @@ const Login = () => {
                                     Email address
                                 </label>
                                 <input
+                                    onChange={(e) => setEmail(e.target.value)}
                                     id="email-address"
                                     name="email"
                                     type="email"
@@ -46,6 +71,7 @@ const Login = () => {
                                     Password
                                 </label>
                                 <input
+                                    onChange={(e) => setPassword(e.target.value)}
                                     id="password"
                                     name="password"
                                     type="password"
@@ -71,10 +97,7 @@ const Login = () => {
                             </div>
 
                             <div className="text-sm">
-                                <Link className="font-medium text-indigo-600 hover:text-indigo-500" to='/registration'> Forgot your password?</Link>
-                                {/* <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                                    Forgot your password?
-                                </a> */}
+                                <Link className="font-medium text-indigo-600 hover:text-indigo-500" to='/registration'> New in this warehouse?</Link>
                             </div>
                         </div>
 
@@ -86,7 +109,7 @@ const Login = () => {
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
                                 </span>
-                                Sign in
+                                Log in
                             </button>
                             <br />
                             <button
@@ -94,7 +117,6 @@ const Login = () => {
                                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                                    <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
                                 </span>
                                 Google Sign in
                             </button>
