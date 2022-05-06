@@ -3,10 +3,6 @@ import { Disclosure, Menu } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
-
 const Header = () => {
     return (
         <Disclosure as="nav" className="bg-gray-800">
