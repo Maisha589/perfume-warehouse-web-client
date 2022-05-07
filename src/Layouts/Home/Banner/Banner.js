@@ -7,7 +7,7 @@ const Banner = () => {
                 <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
                         <div className="sm:max-w-lg">
-                            <h1 className="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+                            <h1 className="text-violet-800 text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
                                 Welcome To Royal Perfume Warehouse.
                             </h1>
                             <p className="mt-4 text-xl text-gray-500">
@@ -26,37 +26,16 @@ const Banner = () => {
                                             <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
                                                     <img
-                                                        src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                                                        src="
+                                                        https://i.ibb.co/XjGdqBh/5398157.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />
                                                 </div>
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden">
                                                     <img
-                                                        src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-                                                        alt=""
-                                                        className="w-full h-full object-center object-cover"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                    <img
-                                                        src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-                                                        alt=""
-                                                        className="w-full h-full object-center object-cover"
-                                                    />
-                                                </div>
-                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                    <img
-                                                        src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                                                        alt=""
-                                                        className="w-full h-full object-center object-cover"
-                                                    />
-                                                </div>
-                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                    <img
-                                                        src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                                                        src="
+                                                        https://i.ibb.co/gVQMQfS/5398149.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />
@@ -65,14 +44,42 @@ const Banner = () => {
                                             <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden">
                                                     <img
-                                                        src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                                                        src="
+                                                        https://i.ibb.co/VDp6H1q/5398145.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />
                                                 </div>
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden">
                                                     <img
-                                                        src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                                                        src="
+                                                        https://i.ibb.co/DDMwGFf/5398189.jpg"
+                                                        alt=""
+                                                        className="w-full h-full object-center object-cover"
+                                                    />
+                                                </div>
+                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                    <img
+                                                        src="
+                                                        https://i.ibb.co/fSf4bZS/5398201.jpg"
+                                                        alt=""
+                                                        className="w-full h-full object-center object-cover"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                    <img
+                                                        src="
+                                                        https://i.ibb.co/xfBwJKN/5398169.jpg"
+                                                        alt=""
+                                                        className="w-full h-full object-center object-cover"
+                                                    />
+                                                </div>
+                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                    <img
+                                                        src="
+                                                        https://i.ibb.co/0nVqtGx/5398161.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />

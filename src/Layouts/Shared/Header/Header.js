@@ -2,8 +2,17 @@ import React from 'react';
 import { Disclosure, Menu } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+
+    const handleLogOut = () => {
+        signOut(auth);
+    }
+
     return (
         <Disclosure as="nav" className="bg-gray-800">
             {({ open }) => (
@@ -24,13 +33,13 @@ const Header = () => {
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
-                                        className="block lg:hidden h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                                        className="block lg:hidden h-10 w-100"
+                                        src="https://i.ibb.co/kgT6QfZ/logo1-removebg-preview.png"
                                         alt="Workflow"
                                     />
                                     <img
                                         className="hidden lg:block h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                                        src="https://i.ibb.co/kgT6QfZ/logo1-removebg-preview.png"
                                         alt="Workflow"
                                     />
                                 </div>
@@ -49,9 +58,16 @@ const Header = () => {
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <Link className=" text-gray-300 hover:bg-gray-700 hover:text-white
+                                {
+                                    user ?
+                                        <Link onClick={handleLogOut} className=" text-gray-300 hover:bg-gray-700 hover:text-white
+                                    px-3 py-2 rounded-md text-sm font-medium"
+                                            to='/login' >Log Out</Link>
+                                        :
+                                        <Link className=" text-gray-300 hover:bg-gray-700 hover:text-white
                                             px-3 py-2 rounded-md text-sm font-medium"
-                                    to='/login' >Login</Link>
+                                            to='/login' >Login</Link>
+                                }
                                 <button
                                     type="button"
                                     className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"

@@ -1,29 +1,11 @@
 [
     {
         "id": 1,
-        "name": "Basic Tee",
+        "name": "",
         "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
         "price": "$35",
         "description": "Strong chocolate smell",
         "supplierName": "J.M Smith",
-        "stock": 1009
-    },
-    {
-        "id": 1,
-        "name": "Basic Tee",
-        "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-        "price": "$35",
-        "description": "Strong chocolate smell",
-        "supplierName": "J.M Smith",
-        "stock": 1009
-    },
-    {
-        "id": 1,
-        "name": "Basic Tee",
-        "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-        "price": "$35",
-        "description": "Strong chocolate smell",
-        "supplierName": "J.M Smith",
-        "stock": 1009
+        "stock": 80
     }
 ]

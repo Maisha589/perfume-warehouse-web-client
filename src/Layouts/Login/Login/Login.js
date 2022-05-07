@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/solid';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    let errorElement;
 
     const [
         signInWithEmailAndPassword,
@@ -19,11 +19,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
     if (loading) {
         return (
@@ -31,7 +27,14 @@ const Login = () => {
         )
     }
     if (user) {
-        // navigate("/");
+        navigate(from, { replace: true });
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        signInWithEmailAndPassword(email, password);
     }
 
     return (
@@ -47,7 +50,7 @@ const Login = () => {
                         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Log in to your account</h2>
                     </div>
                     <form
-                        onClick={() => signInWithEmailAndPassword(email, password)}
+                        onSubmit={handleSubmit}
                         className="mt-8 space-y-6" action="#" method="POST">
                         <input type="hidden" name="remember" defaultValue="true" />
                         <div className="rounded-md shadow-sm -space-y-px">
@@ -56,7 +59,6 @@ const Login = () => {
                                     Email address
                                 </label>
                                 <input
-                                    onChange={(e) => setEmail(e.target.value)}
                                     id="email-address"
                                     name="email"
                                     type="email"
@@ -71,7 +73,6 @@ const Login = () => {
                                     Password
                                 </label>
                                 <input
-                                    onChange={(e) => setPassword(e.target.value)}
                                     id="password"
                                     name="password"
                                     type="password"
@@ -100,7 +101,7 @@ const Login = () => {
                                 <Link className="font-medium text-indigo-600 hover:text-indigo-500" to='/registration'> New in this warehouse?</Link>
                             </div>
                         </div>
-
+                        {errorElement}
                         <div>
                             <button
                                 type="submit"
@@ -112,14 +113,6 @@ const Login = () => {
                                 Log in
                             </button>
                             <br />
-                            <button
-                                type="submit"
-                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                                </span>
-                                Google Sign in
-                            </button>
                         </div>
                         <SocialLogin></SocialLogin>
                     </form>

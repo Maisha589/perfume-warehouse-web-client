@@ -1,28 +1,17 @@
-import React, { useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/solid';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
 
-    if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
-    }
     if (loading) {
         return (
             <Loading></Loading>
@@ -31,6 +20,18 @@ const Register = () => {
     if (user) {
         navigate('/');
     }
+    const gotoLogin = () => {
+        navigate('/login')
+    }
+
+    const handleRegister = (event) => {
+        event.preventDefault();
+        // const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        createUserWithEmailAndPassword(email, password);
+    }
+
 
     return (
         <>
@@ -45,7 +46,7 @@ const Register = () => {
                         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
                     </div>
                     <form
-                        onSubmit={() => createUserWithEmailAndPassword(email, password)}
+                        onSubmit={handleRegister}
                         className="mt-8 space-y-6" action="#" method="POST">
                         <input type="hidden" name="remember" defaultValue="true" />
                         <div className="rounded-md shadow-sm -space-y-px">
@@ -68,7 +69,6 @@ const Register = () => {
                                     Email address
                                 </label>
                                 <input
-                                    onChange={(e) => setEmail(e.target.value)}
                                     id="email-address"
                                     name="email"
                                     type="email"
@@ -83,7 +83,6 @@ const Register = () => {
                                     Password
                                 </label>
                                 <input
-                                    onChange={(e) => setPassword(e.target.value)}
                                     id="password"
                                     name="password"
                                     type="password"
@@ -109,7 +108,7 @@ const Register = () => {
                             </div>
 
                             <div className="text-sm">
-                                <Link className="font-medium text-indigo-600 hover:text-indigo-500" to='/login'> Already have an account?</Link>
+                                <button onClick={gotoLogin} className="font-medium text-indigo-600 hover:text-indigo-500" to='/login'> Already have an account?</button>
                             </div>
                         </div>
 

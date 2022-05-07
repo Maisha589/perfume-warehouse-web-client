@@ -4,6 +4,7 @@ import Blogs from './Layouts/Blogs/Blogs';
 import Home from './Layouts/Home/Home/Home';
 import Login from './Layouts/Login/Login/Login';
 import Register from './Layouts/Login/Register/Register';
+import RequireAuth from './Layouts/Login/RequireAuth/RequireAuth';
 import PerfumeInventory from './Layouts/PerfumeInventory/PerfumeInventory';
 import Footer from './Layouts/Shared/Footer/Footer';
 import Header from './Layouts/Shared/Header/Header';
@@ -17,7 +18,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='/perfumeInventory' element={<PerfumeInventory></PerfumeInventory>}></Route>
+        <Route path='/perfumeInventory' element={
+          <RequireAuth>
+            <PerfumeInventory></PerfumeInventory>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}>Login</Route>
         <Route path='/registration' element={<Register></Register>}></Route>
         <Route path='stockUpdate' element={<StockUpdate></StockUpdate>}></Route>
