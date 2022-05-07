@@ -7,8 +7,8 @@ const Banner = () => {
                 <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
                         <div className="sm:max-w-lg">
-                            <h1 className="text-violet-800 text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
-                                Welcome To Royal Perfume Warehouse.
+                            <h1 className="text-violet-800 text-4xl font font-extrabold tracking-tight sm:text-6xl">
+                                Welcome To <span className='text-gray-900'>ROYAL</span> Perfume Warehouse
                             </h1>
                             <p className="mt-4 text-xl text-gray-500">
                                 Fragrance of future. Start your journey with us. Original quality and pure luxurious perfumes.

@@ -10,6 +10,9 @@ import Footer from './Layouts/Shared/Footer/Footer';
 import Header from './Layouts/Shared/Header/Header';
 import NotFound from './Layouts/Shared/NotFound/NotFound';
 import StockUpdate from './Layouts/StockUpdate/StockUpdate';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import MyInventory from './Layouts/MyInventory/MyInventory';
 
 function App() {
   return (
@@ -23,11 +26,17 @@ function App() {
             <PerfumeInventory></PerfumeInventory>
           </RequireAuth>
         }></Route>
+        <Route path='/myInventory' element={
+          <RequireAuth>
+            <MyInventory></MyInventory>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}>Login</Route>
         <Route path='/registration' element={<Register></Register>}></Route>
         <Route path='stockUpdate' element={<StockUpdate></StockUpdate>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );
