@@ -6,8 +6,8 @@ const Perfume = ({ product }) => {
 
     const navigate = useNavigate();
 
-    const handleStock = (perfumeId) => {
-        navigate(`/stockUpdate/${perfumeId}`);
+    const handleStock = (id) => {
+        navigate(`/stockUpdate/${id}`);
     }
 
     return (
