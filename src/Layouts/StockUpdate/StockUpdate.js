@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import usePerfume from '../../Hooks/usePerfume';
+import 'react-toastify/dist/ReactToastify.css';
 
 const StockUpdate = () => {
     const { id } = useParams();
-    const [perfume, setPerfume] = useState({});
-
-    useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setPerfume(data))
-    }, [])
+    const [perfume] = usePerfume(id);
 
     const handleDeliver = () => {
         const previousStock = parseInt(perfume.stock);
         const updateStock = previousStock - 1;
 
         const currentStock = { updateStock }
-        const url = `http://localhost:5000/products/${id}`
+        const url = `http://localhost:5000/products/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -27,25 +22,32 @@ const StockUpdate = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log("success", result);
+                console.log("success", result.result);
             })
 
     }
 
     return (
-        <div className='flex'>
-            <img className='w-80' src={perfume.imageSrc} alt="" />
-            <div>
-                <h2><span className='font-semibold'>Product Name</span>: {perfume.name}</h2>
-                <br />
-                <p><span className='font-semibold'>Price:</span>{perfume.price}</p>
-                <br />
-                <p><span className='font-semiibold'>Quantity</span>:{perfume.stock}</p>
+        <>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">To Restock</h2>
+            <div className='flex mx-auto container p-3 mt-4'>
+                <img className='w-80' src={perfume.imageSrc} alt="" />
                 <div>
-                    <button onClick={handleDeliver}>Deliver</button>
+                    <h2 className='font-bold bold my-2'><span className='font-semibold text-violet-700'>Product Name</span>: {perfume.name}</h2>
+                    <br />
+                    <h2 className='font-bold bold'><span className='font-semibold text-violet-700'>Supplier Name</span>: {perfume.supplierName}</h2>
+                    <br />
+                    <p className='font-bold'><span className='font-semibold text-violet-700'>Price:</span>{perfume.price}</p>
+                    <br />
+                    <p className='font-bold bold'><span className='font-semibold text-violet-700'>Quantity:</span> <br />{perfume.stock}</p>
+                    <div>
+                        <button className='mb-4 mt-3 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75' onClick={handleDeliver}>Deliver</button>
+                        <br />
+                        <button className=' py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75' >Restock</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
