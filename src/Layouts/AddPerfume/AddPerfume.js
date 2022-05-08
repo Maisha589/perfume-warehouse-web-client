@@ -23,7 +23,7 @@ const AddPerfume = () => {
                 <label htmlFor="email-address" className="sr-only">
                     Email address
                 </label>
-                <input placeholder='Perfume Name' className='border border-3' {...register("Name", { required: true, maxLength: 20 })} />
+                <input placeholder='Perfume Name' className='border border-3' {...register("Name", { required: true })} />
                 <br />
                 <input placeholder='Photo URL' className='border border-3' {...register("imageSrc")} />
                 <br />
