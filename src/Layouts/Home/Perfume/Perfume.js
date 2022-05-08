@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Perfume = ({ product }) => {
-    const { _id, name, imageSrc, price, description } = product;
+    const { _id, name, imageSrc, price, description, stock } = product;
 
     const navigate = useNavigate();
 
@@ -29,7 +29,10 @@ const Perfume = ({ product }) => {
                         <p className="mt-1 text-sm text-gray-500">{description}</p>
                         <p className="mt-1 text-sm text-gray-500">Supplier: {product.supplierName}</p>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">{price}</p>
+                    <div>
+                        <p className="text-sm font-medium text-gray-900">{price}</p>
+                        <p className="text-sm font-medium text-gray-900">In stock:{stock}</p>
+                    </div>
                 </div>
                 <button onClick={() => handleStock(_id)} className=" py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 group-hover:opacity-75">Stock Update
                 </button>
