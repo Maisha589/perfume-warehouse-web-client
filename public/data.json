@@ -1,11 +1,110 @@
 [
     {
         "id": 1,
-        "name": "",
-        "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/7SFNJ5h/parth-natani-uq-Jd-Of-HGb-w-unsplash.jpg",
         "price": "$35",
-        "description": "Strong chocolate smell",
+        "description": "Strong Chocolate fragrance",
         "supplierName": "J.M Smith",
-        "stock": 80
+        "stock": 800
+    },
+    {
+        "id": 2,
+        "name": "Luxury Perfume",
+        "imageSrc": " https://i.ibb.co/rGNFKwV/nusiba-ahmed-Doe-Y1-UMHa-Lc-unsplash.jpg",
+        "price": "$35",
+        "description": "Heaven fragrance",
+        "supplierName": "Laura",
+        "stock": 850
+    },
+    {
+        "id": 3,
+        "name": "Luxury Perfume",
+        "imageSrc": " https://i.ibb.co/gDHcTv5/marisa-garrido-3aql6-Y9-LKFo-unsplash.jpg",
+        "price": "$35",
+        "description": "Strong lili ",
+        "supplierName": "Saymon Sen",
+        "stock": 700
+    },
+    {
+        "id": 4,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/f2NmQz8/sonia-dauer-e-TMMCz6-JI6s-unsplash.jpg",
+        "price": "$35",
+        "description": "Strong tulip fragrance",
+        "supplierName": "Raymond smith",
+        "stock": 680
+    },
+    {
+        "id": 5,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/hc8vvwX/daniela-elsini-JLa-UTQJJi-W4-unsplash.jpg",
+        "price": "$35",
+        "description": "Mild fragrance",
+        "supplierName": "Sheldon Cooper",
+        "stock": 600
+    },
+    {
+        "id": 6,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/q1xdMfS/andrey-ilkevich-7a-Ub9-PSKmc8-unsplash.jpg",
+        "price": "$35",
+        "description": "Sweet fragrance",
+        "supplierName": "Harry Peri",
+        "stock": 650
+    },
+    {
+        "id": 7,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/3fhwdNG/laura-chouette-Mq-AOIz8-Gp-Cs-unsplash.jpg",
+        "price": "$35",
+        "description": "Strong Blooming fragrance",
+        "supplierName": "John",
+        "stock": 600
+    },
+    {
+        "id": 8,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/qBhVf3v/ali-bakhtiari-7ic3y-F64-FS8-unsplash.jpg",
+        "price": "$35",
+        "description": "natural fragrance",
+        "supplierName": "Holder",
+        "stock": 590
+    },
+    {
+        "id": 9,
+        "name": "Luxury Perfume",
+        "imageSrc": "  https://i.ibb.co/PQsP6B9/dario-gomes-Mo-PGCg-HPS6-I-unsplash.jpg",
+        "price": "$35",
+        "description": "Strong fragrance",
+        "supplierName": "Holder",
+        "stock": 600
+    },
+    {
+        "id": 10,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/XyxDRZv/vishal-banik-Oh-Bmys-UAjio-unsplash.jpg",
+        "price": "$35",
+        "description": "Strong fragrance",
+        "supplierName": "John",
+        "stock": 580
+    },
+    {
+        "id": 11,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/2h86ytY/anna-daudelin-m9lnm9j-L918-unsplash.jpg",
+        "price": "$35",
+        "description": "Strong fragrance",
+        "supplierName": "Sheldon Cooper",
+        "stock": 350
+    },
+    {
+        "id": 12,
+        "name": "Luxury Perfume",
+        "imageSrc": "https://i.ibb.co/ftgc40d/laura-chouette-4s-Kde-IMi-FEI-unsplash.jpg",
+        "price": "$35",
+        "description": "Strong fragrance",
+        "supplierName": "Laura",
+        "stock": 300
     }
 ]

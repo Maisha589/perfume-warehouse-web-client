@@ -13,6 +13,7 @@ import StockUpdate from './Layouts/StockUpdate/StockUpdate';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import MyInventory from './Layouts/MyInventory/MyInventory';
+import AddPerfume from './Layouts/AddPerfume/AddPerfume';
 
 function App() {
   return (
@@ -31,9 +32,18 @@ function App() {
             <MyInventory></MyInventory>
           </RequireAuth>
         }></Route>
+        <Route path='/stockUpdate/:id' element={
+          <RequireAuth>
+            <StockUpdate></StockUpdate>
+          </RequireAuth>
+        }></Route>
+        <Route path='/addPerfume' element={
+          <RequireAuth>
+            <AddPerfume></AddPerfume>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}>Login</Route>
         <Route path='/registration' element={<Register></Register>}></Route>
-        <Route path='stockUpdate' element={<StockUpdate></StockUpdate>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
