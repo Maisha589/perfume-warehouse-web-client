@@ -6,8 +6,7 @@ import Loading from '../../Shared/Loading/Loading';
 
 const RequireAuth = ({ children }) => {
 
-    const [user, , loading] = useAuthState(auth);
-    // const [sendEmailVerification] = useSendEmailVerification(auth);
+    const [user, loading] = useAuthState(auth);
     const location = useLocation();
 
     if (loading) {

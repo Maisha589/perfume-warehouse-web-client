@@ -10,8 +10,6 @@ import Footer from './Layouts/Shared/Footer/Footer';
 import Header from './Layouts/Shared/Header/Header';
 import NotFound from './Layouts/Shared/NotFound/NotFound';
 import StockUpdate from './Layouts/StockUpdate/StockUpdate';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
 import MyInventory from './Layouts/MyInventory/MyInventory';
 import AddPerfume from './Layouts/AddPerfume/AddPerfume';
 
@@ -46,7 +44,6 @@ function App() {
         <Route path='/registration' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );

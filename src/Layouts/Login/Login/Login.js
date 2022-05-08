@@ -2,12 +2,16 @@ import { LockClosedIcon } from '@heroicons/react/solid';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../../firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const [email, setEmail] = useState('');
     let from = location.state?.from?.pathname || "/";
     let errorElement;
 
@@ -15,13 +19,17 @@ const Login = () => {
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        error1,
     ] = useSignInWithEmailAndPassword(auth);
 
-    if (error) {
-        errorElement = <p className='text-red-500'>Error: {error?.message}</p>
+    const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(
+        auth
+    );
+
+    if (error1 || error2) {
+        errorElement = <p className='text-red-500'>Error: {error1?.message}</p>
     }
-    if (loading) {
+    if (loading || sending) {
         return (
             <Loading></Loading>
         )
@@ -58,7 +66,7 @@ const Login = () => {
                                 <label htmlFor="email-address" className="sr-only">
                                     Email address
                                 </label>
-                                <input
+                                <input onChange={(e) => setEmail(e.target.value)}
                                     id="email-address"
                                     name="email"
                                     type="email"
@@ -85,21 +93,18 @@ const Login = () => {
                         </div>
 
                         <div className="flex items-center justify-between">
-                            <div className="flex items-center">
-                                <input
-                                    id="remember-me"
-                                    name="remember-me"
-                                    type="checkbox"
-                                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                                />
-                                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                                    Remember me
-                                </label>
-                            </div>
 
                             <div className="text-sm">
                                 <Link className="font-medium text-indigo-600 hover:text-indigo-500" to='/registration'> New in this warehouse?</Link>
                             </div>
+                            <button className="font-normal text-indigo-600 hover:text-indigo-500"
+                                onClick={async () => {
+                                    await sendPasswordResetEmail(email);
+                                    toast('Sent email');
+                                }}
+                            >
+                                Reset password
+                            </button>
                         </div>
                         {errorElement}
                         <div>
@@ -115,6 +120,7 @@ const Login = () => {
                             <br />
                         </div>
                         <SocialLogin></SocialLogin>
+                        <ToastContainer></ToastContainer>
                     </form>
                 </div>
             </div>
