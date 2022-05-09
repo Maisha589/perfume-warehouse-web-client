@@ -4,7 +4,7 @@ const usePerfume = (perfumeId) => {
     const [perfume, setPerfume] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${perfumeId}`;
+        const url = `https://floating-lowlands-90113.herokuapp.com/products/${perfumeId}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())

@@ -12,7 +12,7 @@ const StockUpdate = () => {
         const updateStock = previousStock - 1;
 
         const currentStock = { updateStock }
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://floating-lowlands-90113.herokuapp.com/products/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {

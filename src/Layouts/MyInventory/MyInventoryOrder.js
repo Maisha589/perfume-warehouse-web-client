@@ -20,7 +20,7 @@ const MyInventoryOrder = () => {
             id: id,
             quantity: event.target.quantity.value
         }
-        const url = `http://localhost:5000/order`;
+        const url = `https://floating-lowlands-90113.herokuapp.com/order`;
         fetch(url, {
             method: "POST",
             headers: {

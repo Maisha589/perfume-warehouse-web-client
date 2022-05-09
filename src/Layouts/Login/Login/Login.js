@@ -7,7 +7,7 @@ import Loading from '../../Shared/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
-import axios from "axios";
+import useToken from '../../../Hooks/useToken';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -23,12 +23,17 @@ const Login = () => {
         error1,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token] = useToken(user);
+
     const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(
         auth
     );
 
     if (error1 || error2) {
         errorElement = <p className='text-red-500'>Error: {error1?.message}</p>
+    }
+    if (token) {
+        navigate(from, { replace: true });
     }
     if (loading || sending) {
         return (
@@ -40,9 +45,6 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post("http://localhost:5000/login", { email });
-        localStorage.setItem("accessToken", data.accessToken);
-        navigate(from, { replace: true });
     }
 
     return (
