@@ -13,13 +13,15 @@ const MyInventory = () => {
             const url = `https://floating-lowlands-90113.herokuapp.com/order?email=${email}`;
             const { data } = await axios.get(url)
             setOrder(data);
+            // console.log(data);
         }
         getOrders();
     }, [user])
     return (
         <div>
-            <h2>This is my inventory: {user.displayName}</h2>
-            <h2>This is my inventory: {order.length}</h2>
+
+            <h2 className='text-2xl font-semibold text-violet-800'>This is my inventory & Orders <span className='font-bold'>{user.displayName}</span></h2>
+            <h2>This is my inventory: {order.perfume}</h2>
         </div>
     );
 };
