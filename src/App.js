@@ -12,6 +12,7 @@ import NotFound from './Layouts/Shared/NotFound/NotFound';
 import StockUpdate from './Layouts/StockUpdate/StockUpdate';
 import MyInventory from './Layouts/MyInventory/MyInventory';
 import AddPerfume from './Layouts/AddPerfume/AddPerfume';
+import MyInventoryOrder from './Layouts/MyInventory/MyInventoryOrder';
 
 function App() {
   return (
@@ -38,6 +39,11 @@ function App() {
         <Route path='/addPerfume' element={
           <RequireAuth>
             <AddPerfume></AddPerfume>
+          </RequireAuth>
+        }></Route>
+        <Route path='/myInventoryOrder/:id' element={
+          <RequireAuth>
+            <MyInventoryOrder></MyInventoryOrder>
           </RequireAuth>
         }></Route>
         <Route path='/login' element={<Login></Login>}>Login</Route>
