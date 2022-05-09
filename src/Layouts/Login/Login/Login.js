@@ -7,6 +7,7 @@ import Loading from '../../Shared/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
+import axios from "axios";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -34,15 +35,14 @@ const Login = () => {
             <Loading></Loading>
         )
     }
-    if (user) {
-        navigate(from, { replace: true });
-    }
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post("http://localhost:5000/login", { email });
+        localStorage.setItem("accessToken", data.accessToken);
+        navigate(from, { replace: true });
     }
 
     return (
