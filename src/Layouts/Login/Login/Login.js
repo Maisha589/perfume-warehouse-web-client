@@ -10,8 +10,8 @@ import { useState } from 'react';
 
 const Login = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const [email, setEmail] = useState('');
+    const location = useLocation();
     let from = location.state?.from?.pathname || "/";
     let errorElement;
 

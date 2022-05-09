@@ -41,9 +41,9 @@ const MyInventoryOrder = () => {
             <h2>Order: {perfume.name}</h2>
             <form onSubmit={handleOrder} action="">
                 <span className='p-2'>User Name:</span>
-                <input className='border border-3 mb-3 mt-3' type="text" name="name" value={user.displayName} id="" disabled readOnly /> <br />
+                <input className='border border-3 mb-3 mt-3' type="text" name="name" value={user?.displayName} id="" disabled readOnly /> <br />
                 <span className='p-2'>User Email</span>
-                <input className='border border-3 mb-3' disabled readOnly type="email" name="email" value={user.email} id="" /><br />
+                <input className='border border-3 mb-3' disabled readOnly type="email" name="email" value={user?.email} id="" /><br />
                 <span className='p-2'>Product Name</span>
                 <input className='border border-3 mb-3' type="text" name="perfume name" value={perfume.name} readOnly disabled id="" /> <br />
                 <span className='p-2'>Quantity</span>
