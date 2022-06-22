@@ -8,11 +8,14 @@ const StockUpdate = () => {
     const [perfume] = usePerfume(id);
 
     const handleDeliver = () => {
-        const previousStock = parseInt(perfume.stock);
-        const updateStock = previousStock - 1;
 
+
+        const previousStock = perfume.stock;
+        const updateStock = previousStock - 1;
         const currentStock = { updateStock }
-        const url = `https://floating-lowlands-90113.herokuapp.com/products/${id}`;
+        console.log(currentStock);
+
+        const url = `http://localhost:5000/products/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -24,7 +27,6 @@ const StockUpdate = () => {
             .then(result => {
                 console.log("success", result);
             })
-
     }
 
     return (

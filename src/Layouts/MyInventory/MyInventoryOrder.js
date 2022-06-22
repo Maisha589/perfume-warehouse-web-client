@@ -14,13 +14,12 @@ const MyInventoryOrder = () => {
     const handleOrder = event => {
         event.preventDefault();
         const orderPerfume = {
-            name: user.displayName,
+            name: event.target.name.value,
             email: user.email,
             perfume: perfume.name,
-            id: id,
             quantity: event.target.quantity.value
         }
-        const url = `https://floating-lowlands-90113.herokuapp.com/order`;
+        const url = `http://localhost:5000/order`;
         fetch(url, {
             method: "POST",
             headers: {
@@ -41,7 +40,7 @@ const MyInventoryOrder = () => {
             <h2>Order: {perfume.name}</h2>
             <form onSubmit={handleOrder} action="">
                 <span className='p-2'>User Name:</span>
-                <input className='border border-3 mb-3 mt-3' type="text" name="name" value={user?.displayName} id="" disabled readOnly /> <br />
+                <input className='border border-3 mb-3 mt-3' type="text" name="name" placeholder='Your name' id="" /> <br />
                 <span className='p-2'>User Email</span>
                 <input className='border border-3 mb-3' disabled readOnly type="email" name="email" value={user?.email} id="" /><br />
                 <span className='p-2'>Product Name</span>

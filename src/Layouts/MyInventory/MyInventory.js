@@ -10,7 +10,7 @@ const MyInventory = () => {
     useEffect(() => {
         const getOrders = async () => {
             const email = user.email;
-            const url = `https://floating-lowlands-90113.herokuapp.com/order?email=${email}`;
+            const url = `http://localhost:5000/order/user?email=${email}`;
             const { data } = await axios.get(url)
             setOrder(data);
             // console.log(data);
@@ -19,9 +19,8 @@ const MyInventory = () => {
     }, [user])
     return (
         <div>
-
-            <h2 className='text-2xl font-semibold text-violet-800'>This is my inventory & Orders <span className='font-bold'>{user.displayName}</span></h2>
-            <h2>This is my inventory: {order.perfume}</h2>
+            <h2 className='text-2xl font-semibold text-violet-800'>This is my Orders</h2>
+            <h2>This is my inventory: {order.length}</h2>
         </div>
     );
 };

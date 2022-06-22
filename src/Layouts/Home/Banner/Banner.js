@@ -27,7 +27,7 @@ const Banner = () => {
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
                                                     <img
                                                         src="
-                                                        https://i.ibb.co/XjGdqBh/5398157.jpg"
+                                                        https://i.ibb.co/5Y5G6M7/5398145-1.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />
@@ -35,33 +35,7 @@ const Banner = () => {
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden">
                                                     <img
                                                         src="
-                                                        https://i.ibb.co/gVQMQfS/5398149.jpg"
-                                                        alt=""
-                                                        className="w-full h-full object-center object-cover"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                    <img
-                                                        src="
-                                                        https://i.ibb.co/VDp6H1q/5398145.jpg"
-                                                        alt=""
-                                                        className="w-full h-full object-center object-cover"
-                                                    />
-                                                </div>
-                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                    <img
-                                                        src="
-                                                        https://i.ibb.co/DDMwGFf/5398189.jpg"
-                                                        alt=""
-                                                        className="w-full h-full object-center object-cover"
-                                                    />
-                                                </div>
-                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                    <img
-                                                        src="
-                                                        https://i.ibb.co/fSf4bZS/5398201.jpg"
+                                                        https://i.ibb.co/LCBvBF6/5398149.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />
@@ -71,7 +45,7 @@ const Banner = () => {
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden">
                                                     <img
                                                         src="
-                                                        https://i.ibb.co/xfBwJKN/5398169.jpg"
+                                                        https://i.ibb.co/Z2YXkJg/5398157-1.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />
@@ -79,7 +53,33 @@ const Banner = () => {
                                                 <div className="w-44 h-64 rounded-lg overflow-hidden">
                                                     <img
                                                         src="
-                                                        https://i.ibb.co/0nVqtGx/5398161.jpg"
+                                                        https://i.ibb.co/vZnkM3w/5398161-1.jpg"
+                                                        alt=""
+                                                        className="w-full h-full object-center object-cover"
+                                                    />
+                                                </div>
+                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                    <img
+                                                        src="
+                                                        https://i.ibb.co/wgrNgx8/5398169-1.jpg"
+                                                        alt=""
+                                                        className="w-full h-full object-center object-cover"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                    <img
+                                                        src="
+                                                        https://i.ibb.co/VSR5NQ6/5398189.jpg"
+                                                        alt=""
+                                                        className="w-full h-full object-center object-cover"
+                                                    />
+                                                </div>
+                                                <div className="w-44 h-64 rounded-lg overflow-hidden">
+                                                    <img
+                                                        src="
+                                                        https://i.ibb.co/BtvdGKc/5398201.jpg"
                                                         alt=""
                                                         className="w-full h-full object-center object-cover"
                                                     />

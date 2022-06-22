@@ -4,7 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const url = "https://floating-lowlands-90113.herokuapp.com/products";
+        const url = "http://localhost:5000/products";
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))

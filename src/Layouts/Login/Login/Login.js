@@ -32,7 +32,7 @@ const Login = () => {
     if (error1 || error2) {
         errorElement = <p className='text-red-500'>Error: {error1?.message}</p>
     }
-    if (token) {
+    if (user) {
         navigate(from, { replace: true });
     }
     if (loading || sending) {

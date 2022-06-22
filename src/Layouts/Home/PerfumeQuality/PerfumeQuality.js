@@ -29,22 +29,22 @@ const PerfumeQuality = () => {
                 </div>
                 <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
                     <img
-                        src="https://i.ibb.co/y0LXMNK/rosy-h-nguyen-5-Hrl-EGTsa-B4-unsplash-1.jpg"
+                        src="https://i.ibb.co/8MMMXgp/rosy-h-nguyen-5-Hrl-EGTsa-B4-unsplash-2-1.jpg"
                         alt=""
                         className="bg-gray-100 rounded-lg"
                     />
                     <img
-                        src=" https://i.ibb.co/tbw9zjd/fulvio-ciccolo-Al6-U8-Ed-TG58-unsplash.jpg"
+                        src="https://i.ibb.co/Gn6YhLg/fulvio-ciccolo-Pmkq0y-Z80-4-unsplash-1-1.jpg"
                         alt=""
                         className="bg-gray-100 rounded-lg"
                     />
                     <img
-                        src="https://i.ibb.co/t3tph5d/fulvio-ciccolo-Pmkq0y-Z80-4-unsplash.jpg"
+                        src="https://i.ibb.co/zmC54zc/fulvio-ciccolo-Al6-U8-Ed-TG58-unsplash-1-1-1.jpg"
                         alt=""
                         className="bg-gray-100 rounded-lg"
                     />
                     <img
-                        src="   https://i.ibb.co/qWY73vm/yixian-zhao-q7i-ZCOXGOWY-unsplash.jpg"
+                        src="https://i.ibb.co/HBTDPtG/yixian-zhao-q7i-ZCOXGOWY-unsplash-1-1.jpg"
                         alt=""
                         className="bg-gray-100 rounded-lg"
                     />
