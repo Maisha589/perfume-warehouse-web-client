@@ -9,7 +9,7 @@ const PerfumeInventory = () => {
     const handleDelete = id => {
         const del = window.confirm("Are you sure?")
         if (del) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://floating-lowlands-90113.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: "DELETE"
             })

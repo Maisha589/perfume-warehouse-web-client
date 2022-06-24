@@ -11,7 +11,7 @@ const MyInventory = () => {
     useEffect(() => {
         const getOrders = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/order/user?email=${email}`;
+            const url = `https://floating-lowlands-90113.herokuapp.com/order/user?email=${email}`;
             const { data } = await axios.get(url)
             setOrders(data);
             // console.log(data);
