@@ -25,7 +25,7 @@ const AddPerfume = () => {
     };
     return (
         <>
-            <h2 className='text-3xl text-violet-600 font-extrabold tracking-tight'>Add Perfumes in our warehouse</h2>
+            <h2 className='text-3xl m-3 text-violet-600 font-extrabold tracking-tight'>Add Perfumes in our warehouse</h2>
             <form className='mt-8 mb-5 space-y-6' onSubmit={handleSubmit(onSubmit)}>
                 <span className='font-semibold text-violet-700 mr-2'>Name:</span>
                 <input placeholder='Perfume Name' className='border border-3' {...register("name", { required: true })} />

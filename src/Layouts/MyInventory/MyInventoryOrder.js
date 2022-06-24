@@ -16,6 +16,7 @@ const MyInventoryOrder = () => {
         const orderPerfume = {
             name: event.target.name.value,
             email: user.email,
+            img: perfume.imageSrc,
             perfume: perfume.name,
             quantity: event.target.quantity.value
         }
@@ -29,7 +30,7 @@ const MyInventoryOrder = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 toast("Order Placed");
                 event.target.reset();
             });
@@ -37,19 +38,23 @@ const MyInventoryOrder = () => {
 
     return (
         <div>
-            <h2>Order: {perfume.name}</h2>
-            <form onSubmit={handleOrder} action="">
-                <span className='p-2'>User Name:</span>
-                <input className='border border-3 mb-3 mt-3' type="text" name="name" placeholder='Your name' id="" /> <br />
-                <span className='p-2'>User Email</span>
-                <input className='border border-3 mb-3' disabled readOnly type="email" name="email" value={user?.email} id="" /><br />
-                <span className='p-2'>Product Name</span>
-                <input className='border border-3 mb-3' type="text" name="perfume name" value={perfume.name} readOnly disabled id="" /> <br />
-                <span className='p-2'>Quantity</span>
-                <input className='border border-3 mb-3' required type="number" name="quantity" placeholder="Quantity" id="" /> <br />
-                <input type="submit" value="Place Order" />
-                <ToastContainer></ToastContainer>
-            </form>
+            <h2 className="text-3xl text-blue-900 font-bold m-3 p-5">Withdraw Your perfume</h2>
+            <div className='grid lg:grid-cols-2 sm:grid-cols-1 justify-center justify-items-center'>
+                <div>
+                    <img className='w-80 mb-5 p-3' src={perfume.imageSrc} alt="" />
+                </div>
+                <div>
+                    <form onSubmit={handleOrder} action="">
+                        <input className='border border-3 mb-3 mt-3 p-2' type="text" name="name" placeholder='Your name' id="" required /> <br />
+                        <input className='border border-3 mb-3 p-2' disabled readOnly type="email" name="email" value={user?.email} id="" /><br />
+                        <input className='border border-3 mb-3 p-2' type="text" name="perfume name" value={perfume.name} readOnly disabled id="" /> <br />
+                        <input className='border border-3 mb-3 p-2' type="text" name="perfume name" value={perfume.description} readOnly disabled id="" /> <br />
+                        <input className='border border-3 mb-3 p-2' required type="number" name="quantity" placeholder="Quantity" id="" /> <br />
+                        <input className=' py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75' type="submit" value="Place Order" />
+                        <ToastContainer></ToastContainer>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };

@@ -32,8 +32,10 @@ const StockUpdate = () => {
     return (
         <>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">To Restock</h2>
-            <div className='flex mx-auto container p-3 mt-4'>
-                <img className='w-80' src={perfume.imageSrc} alt="" />
+            <div className='grid lg:grid-cols-2 sm:grid-cols-1 justify-items-center mb-5'>
+                <div>
+                    <img className='w-80' src={perfume.imageSrc} alt="" />
+                </div>
                 <div>
                     <h2 className='font-bold bold my-2'><span className='font-semibold text-violet-700'>Product Name</span>: {perfume.name}</h2>
                     <br />
