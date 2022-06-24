@@ -1,12 +1,18 @@
-# A warehouse website
+## [Royal Perfume](https://royal-perfume.web.app/).
 
- [Royal Perfume](https://royal-perfume.web.app/).
+# About Website: 
+1. It is a perfume warehouse management website where perfumes can be stored and withdrew.
+2. User can store there perfumes of business safely. 
+3. User can see which products are stored here but need to login first. 
+4. If user want any perfume he or she can order any set or perfume.
+5. User can see all ordered products in their my order page.
+6. User can also add their perfume in this website to store safely.
 
-# It is a warehouse website where a client can store their product or can buy for their bussiness.
 
 # Features - 
-1. used framework - Tailwind with plugs
-2. Used hooks for load data
-3. Used heroku for store data
-4. Related with Mongodb
-5. Used firebase for authentication.
+1. CSS framework - Tailwind with plugin
+2. React-hook
+3. Firebase - authentication and hosting.
+4. Heroku
+5. Mongodb
+6. Toastify
