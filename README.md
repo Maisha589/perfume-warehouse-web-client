@@ -10,7 +10,7 @@
 7. User can also add their perfume in this website to store safely.
 
 
-# Features - 
+# Technologies - 
 1. CSS framework - Tailwind with plugin
 2. React-hook
 3. Firebase - authentication and hosting.
